@@ -1,0 +1,29 @@
+def listToString(s):  
+    
+    # initialize an empty string 
+    str1 = ""  
+    
+    # traverse in the string   
+    for ele in s:  
+        str1 += ele   
+    
+    # return string   
+    return str1
+
+def reverse_string(str1):
+    str1 = list(str1)
+    temp_chr = str1[0]
+    str1[0] = str1[len(str1) - 1]
+    str1[len(str1) - 1] = temp_chr
+    str2 = listToString(str1)
+    return str2
+
+def str_list_func(line):
+    line = line.split()
+    reverse_word = ""
+    for word in line:
+        reverse_word += reverse_string(word)
+        reverse_word += " "
+    return reverse_word
+wrd = str_list_func("I am learning Python at CloudxLab")
+print(wrd)
