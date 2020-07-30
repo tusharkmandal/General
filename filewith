@@ -1,0 +1,21 @@
+def file_read_func(filename):
+    try:
+        with open(filename) as f:
+            s = ""
+            i = 0
+            for line in f:
+                s = s + line
+                
+            print(s)
+            i = 0
+            for c in s:
+                if c =='\n':
+                    i = i + 1
+        
+            return len(s) - i
+    except:
+        return -1
+       
+count = file_read_func("/home/tusharkmandal5673/a.txt")
+
+print(count)
